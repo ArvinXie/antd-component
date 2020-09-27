@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import { Checkbox, Spin } from 'antd';
 
-import   './index.less'
+import './index.less'
 
 export default class CheckboxGroup extends Component {
 
     static getDerivedStateFromProps(nextProps) {
         if ('value' in nextProps) {
-            return [ ...(nextProps.value || []) ];
+            return [...(nextProps.value || [])];
         }
         return [];
     }
