@@ -1,0 +1,178 @@
+.ant-modal-content {
+  .ant-list {
+    padding: 16px;
+  }
+
+  .ant-list-grid .ant-list-item {
+    margin-bottom: 10px;
+  }
+
+  .filter-wrap {
+    padding: 6px 10px;
+  }
+
+  .search-toolbar-wrap {
+    margin-bottom: 0;
+  }
+}
+
+.searchList {
+  .ant-list {
+    background: #fff;
+  }
+
+  .ant-list-item-meta-title {
+    font-size: 12px;
+    height: 2.4em;
+    line-height: 1.2em;
+    overflow: hidden;
+  }
+
+  .ant-list-item-meta-avatar {
+    margin-right: 10px;
+  }
+
+  .ant-list-item.multiSelect,
+  .ant-list-item.showStatus {
+    padding: 6px;
+    border: 1px solid #f3f3f3;
+    position: relative;
+    cursor: pointer;
+
+    &:last-child {
+      border: 1px solid #f3f3f3;
+    }
+
+    .status {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 20px;
+      color: #c1c1c1;
+      visibility: hidden;
+      z-index: 5;
+
+      &.selected {
+        visibility: visible;
+        color: #1890ffa1;
+      }
+    }
+
+    &:hover {
+      background: #f4f4f4;
+
+      .status {
+        visibility: visible;
+        color: #1890ffa1;
+      }
+    }
+
+    &.selected {
+      background: #edf6ff;
+      background: #d1e9ff;
+    }
+
+    &.unselectable {
+      cursor: default;
+      background: #fff;
+
+      .status {
+        visibility: visible;
+        color: #c1c1c1;
+      }
+    }
+  }
+  .footer,
+  .header {
+    text-align: right;
+    padding: 10px 20px;
+    background: #fff;
+    border-top: 1px solid #f2f3f5;
+    display: flex;
+    align-items: center;
+    height: 53px;
+
+    &.empty {
+      border-color: #fff;
+    }
+
+    .ant-pagination {
+      flex: 1;
+    }
+  }
+
+  .header {
+    border-top: 0 none;
+    border-bottom: 1px solid #f2f3f5;
+  }
+  .footer {
+    text-align: right;
+    background: #fff;
+  }
+
+  .select-bar {
+    line-height: 21px;
+    text-align: left;
+    flex: 0 0 300px;
+
+    .ant-badge-not-a-wrapper {
+      vertical-align: top;
+    }
+    .tips {
+      font-size: 12px;
+    }
+    .select-all {
+      margin-right: 10px;
+
+      .anticon {
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+.searchList.card {
+  .ant-list-grid {
+    padding: 10px;
+  }
+
+  .ant-list-item {
+    padding: 4px;
+
+    .status {
+      font-size: 24px;
+    }
+    .ex-status {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      font-size: 30px;
+    }
+  }
+
+  .ant-card-body {
+    padding: 8px 0;
+
+    .title {
+      padding: 0 8px;
+      font-size: 12px;
+      height: 36px;
+      line-height: 18px;
+      overflow: hidden;
+      .tag {
+        display: inline-block;
+        background: #f5222d;
+        color: #fff;
+        padding: 0 4px;
+        margin: 0 4px 0 -6px;
+      }
+    }
+    .desc {
+      height: 20px;
+      line-height: 20px;
+      margin-top: 4px;
+      font-size: 12px;
+      overflow: hidden;
+    }
+  }
+}
