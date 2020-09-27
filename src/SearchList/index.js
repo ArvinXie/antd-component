@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import classnames from 'classnames';
 import { List, Tabs, Pagination, Badge } from 'antd';
+import Icon from '@ant-design/icons'
 import SearchToolBar from '../SearchToolBar';
-import EIcon from '../EIcon'
-
-import   './index.less';
+import IconSelect from './select.svg'
+import IconSelectAll from './select-all.svg'
+import './index.less';
 
 const TabPane = Tabs.TabPane;
 const Noop = e => { }
@@ -30,7 +31,7 @@ export default class SearchList extends Component {
     searchModel.page = page;
     searchModel.pageSize = pageSize;
     const tabItem = quickSearch.find(m => m.key == tabKey);
- 
+
     if (tabItem) {
       searchModel.items = [...searchModel.items, ...tabItem.value];
     }
@@ -71,19 +72,18 @@ export default class SearchList extends Component {
   }
 
   renderItem(item) {
-    const defSelectIcon = 'icon-selected';
-    const { rowKey, itemRender = Noop, multiSelect = false, hoverable = true, showStatus = false, selectable = () => true, slectIcon = defSelectIcon } = this.props;
+    const { rowKey, itemRender = Noop, multiSelect = false, hoverable = true, showStatus = false, selectable = () => true } = this.props;
     const { selectedItems = [] } = this.state;
     const selected = selectedItems.findIndex(m => m[rowKey] == item[rowKey]) > -1;
     const itemSelectable = selectable(item);
     return <List.Item className={classnames({ hoverable, multiSelect, showStatus, selected, unselectable: !itemSelectable })} key={item[rowKey]} onClick={e => itemSelectable ? this.onItemClick(item, !selected) : ''}>
-      {(multiSelect || showStatus) && <EIcon className={classnames({ status: true, selected })} type={slectIcon} />}
+      {(multiSelect || showStatus) && <Icon component={IconSelect} className={classnames({ status: true, selected })} />}
       {itemRender(item, selected)}
     </List.Item>
   }
 
   renderList() {
-
+    const defSelectAllIcon = <Icon component={IconSelectAll} />;
     const defGrid = { gutter: 16, lg: 4, md: 3, sm: 2, xs: 1 };
     const { className, locale, scroll,
       multiSelect = false, dataSource = [], pagination, rowKey, loading,
@@ -95,10 +95,10 @@ export default class SearchList extends Component {
     const scrollStyle = scroll ? { height: scroll, overflowY: 'auto', overflowX: 'hidden' } : {};
 
     const selectBar = (multiSelect && dataSource.length > 0) && <div className='select-bar'>
-      <a className='select-all' onClick={e => this.addSelectItems(dataSource.filter(m => selectable(m)))}><EIcon type='icon-select-all' />全选本页</a>
+      <a className='select-all' onClick={e => this.addSelectItems(dataSource.filter(m => selectable(m)))}>{defSelectAllIcon}全选本页</a>
       {selectCount > 0 && showSelectCount && (
         <span className='tips'>已选择<Badge count={selectCount} overflowCount={100000} style={{ backgroundColor: '#fff', color: '#f5222d' }} />个，
-         <a className='unselect' onClick={e => { this.setState({ selectedItems: [] }); onSelectChange([]) }}>取消选择</a></span>
+          <a className='unselect' onClick={e => { this.setState({ selectedItems: [] }); onSelectChange([]) }}>取消选择</a></span>
       )}
     </div>
 
@@ -120,7 +120,7 @@ export default class SearchList extends Component {
   render() {
     const { wrapClass, exButtons, title, autoLoad,
       searchItems = [], quickSortItems = [], filterAlign, pagination, quickSearch, quickFilterItems, } = this.props;
-    return <div className={`searchList ${wrapClass||''}`}>
+    return <div className={`searchList ${wrapClass || ''}`}>
       {title}
       {quickSearch && <Tabs ref='tabs' onChange={e => this.setState({ tabKey: e }, () => this.fetchData(1, 10))} type='card'>
         {(quickSearch || []).map((item, i) => <TabPane tab={item.label} key={item.key} />)}
