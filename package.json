@@ -1,5 +1,5 @@
 {
-    "name": "antd-components",
+    "name": "antd-component",
     "version": "0.0.1",
     "description": "Advanced ant design components",
     "license": "MIT",
@@ -8,7 +8,7 @@
       "type": "git",
       "url": "git+https://github.com/ArvinXie/antd-components.git"
     },
-    "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+    "publishConfig": { "registry": "https://registry.npmjs.org/" },
     "files": [
       "src"
     ],
