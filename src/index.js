@@ -6,7 +6,7 @@
   export SearchList from './SearchList'
   export SearchTable from './SearchTable'
   export SearchToolBar from './SearchToolBar'
+  export modelUtil from './Utils/modelUtil'
 
-  
-  
-  
+
+
