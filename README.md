@@ -1,17 +1,15 @@
 # antd-components
+> 对Antd组件进行二次封装和扩展，对业务系统更加友好
 
-基于 ant design 进行二次封装的组件库
-
-## How to use?
-
-### Add as submodule
-
-```bash
-    cd {project-directory}/src
-    git submodule add https://github.com/ArvinXie/antd-components.git
-    # pull all submodules
-    git submodule foreach git pull origin master
+## Install 
+```js
+npm install antd-component 
+ // or
+yarn add antd-component
 ```
+
+## Antd Version
+4.x
 
 ### Use in your code
 
