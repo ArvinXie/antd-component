@@ -1,43 +1,58 @@
 let path = require('path')
-
-let webpack = require('webpack')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
  
-
-
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        index: './packages/index',
+        utils: './packages/utils/index'
+    },
+    devtool: 'none',
+    mode: 'production',// 告诉webpack使用production模式的内置优化,
     output: {
-        path: path.resolve(__dirname, 'lib'),
-        libraryTarget: 'umd' // 定义打包方式Universal Module Definition,同时支持在CommonJS、AMD和全局变量使用
+        filename: '[name].js',
+        path: path.resolve(__dirname, './dist'),
+        library: 'antd-doddle',
+        libraryTarget: 'umd',
+        sourceMapFilename: '[file].map', // string
     },
 
-    mode: 'production', // 告诉webpack使用production模式的内置优化,
 
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                loader: 'babel-loader',
-                include: [path.resolve(__dirname, 'src')],
-                exclude: /(node_modules|bower_components)/,
-            }, {
-                test: /\.less$/,
-                use: [{
-                    loader: "style-loader" // creates style nodes from JS strings
-                }, {
-                    loader: "css-loader" // translates CSS into CommonJS
-                }, {
-                    loader: "less-loader" // compiles Less to CSS
-                }]
+        rules: [  {
+            test: /\.jsx?$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel-loader',
+            query: {
+              presets: ['@babel/preset-env', '@babel/preset-react']
             }
-        ]
+          }, {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            options: {
+              limit: 10000
+            }
+          }, {
+            test: /\.css$/,
+            use: [MiniCssExtractPlugin.loader, 'style-loader', 'css-loader'],
+          }, {
+            test: /\.scss$/,
+            use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+          }, {
+            test: /\.less$/,
+            use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader']
+          }]
     },
 
     plugins: [
-         
+        new CleanWebpackPlugin( ),
+        new MiniCssExtractPlugin({ filename: './index.css' }),// 文件目录会放入output.path里
     ],
     externals: { // 从输出的bundle中排除依赖
-
+        react: { commonjs: 'react', commonjs2: 'react', amd: 'react', },
+        react: { commonjs: 'react-dom', commonjs2: 'react-dom', amd: 'react-dom', },
+        antd: { commonjs: 'antd', commonjs2: 'antd', amd: 'antd', },
+        moment: { commonjs: 'moment', commonjs2: 'moment', amd: 'moment', },
     }
 
 }

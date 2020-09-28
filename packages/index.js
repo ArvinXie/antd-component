@@ -6,5 +6,5 @@ export { default as InputTag } from './InputTag'
 export { default as SearchTable } from './SearchTable'
 export { default as SearchToolBar } from './SearchToolBar'
 export { default as GlobalModal } from './GlobalModal'
-export { default as modelUtil } from './Utils/modelUtil'
+
 
