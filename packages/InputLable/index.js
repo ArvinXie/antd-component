@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import './index.less';
 
@@ -13,12 +12,7 @@ export default class InputLable extends React.Component {
         const addonClassName = `${wrapperClassName}-addon`;
         const addonBefore = props.addonBefore ? (<span className={addonClassName}>{props.addonBefore}</span>) : null;
         const addonAfter = props.addonAfter ? (<span className={addonClassName}>{props.addonAfter}</span>) : null;
-
-        const className = classNames({
-            [`${props.prefixCls}-wrapper`]: true,
-            [wrapperClassName]: (addonBefore || addonAfter),
-        });
-
+        const className = (addonBefore || addonAfter) ? `${props.prefixCls}-wrapper ${wrapperClassName}` : `${props.prefixCls}-wrapper`;
         return (<span className={className}> {addonBefore} {this.props.children} {addonAfter} </span>);
     }
 }

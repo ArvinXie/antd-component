@@ -1,5 +1,4 @@
 import { Tag, Input, Tooltip } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
 import './index.less';
 
 export default class EditableTagGroup extends React.Component {
@@ -83,7 +82,7 @@ export default class EditableTagGroup extends React.Component {
                         onPressEnter={e => this.addTag()} />
                 </div>
             )}
-            {tagCount != editIndex && <Tag className='site-tag-plus' onClick={e => this.showInput(tagCount)}><PlusOutlined />{addButtnText}</Tag>}
+            {tagCount != editIndex && <Tag className='site-tag-plus' onClick={e => this.showInput(tagCount)}>{addButtnText}</Tag>}
         </div>
 
     }
