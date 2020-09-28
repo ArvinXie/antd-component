@@ -10,12 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/fancydigital/antd-components.git"
   },
-  "main": "lib/index.js",
-  "module": "lib/index.js",
-  "unpkg": "lib/index.js",
-  "engines": {
-    "npm": ">=3.0.0"
-  },
+  "main": "index.js",
+   
   "keywords": [
     "antd",
     "component"
