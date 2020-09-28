@@ -7,6 +7,6 @@ import SearchTable from './SearchTable'
 import SearchToolBar from './SearchToolBar'
 import GlobalModal from './GlobalModal'
 import utils from './Utils/modelUtil'
- 
-export default { CheckboxGroup, InputLable, InputRadio, InputRange, InputTag, SearchTable, SearchToolBar, GlobalModal, utils };
+
+export { CheckboxGroup, InputLable, InputRadio, InputRange, InputTag, SearchTable, SearchToolBar, GlobalModal, utils };
 
