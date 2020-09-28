@@ -1,6 +1,5 @@
 import { Tag, Input, Tooltip } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import { arryUtil } from '@/utils'
 import './index.less';
 
 export default class EditableTagGroup extends React.Component {
@@ -30,7 +29,8 @@ export default class EditableTagGroup extends React.Component {
         this.triggerChange(tags);
     }
     removeTag(index) {
-        const tags = arryUtil.delete(this.state.tags, index);
+        const tagsOld = this.state.tags;
+        const tags = [...tagsOld.slice(0, index), ...tagsOld.slice(index + 1)];
         this.setState({ tags });
         this.triggerChange(tags);
     };
@@ -67,7 +67,7 @@ export default class EditableTagGroup extends React.Component {
         const { addButtnText = '添加标签' } = this.props;
         const { tags, inputValue, editIndex } = this.state;
         const tagCount = tags.length;
- 
+
         return <div className='input-tag'>
             {tags.map((tag, index) => this.renderTag(tag, index))}
 

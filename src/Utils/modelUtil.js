@@ -1,4 +1,4 @@
-export const defaultListData = {
+const defaultListData = {
     list: [],
     searchModel: {},
     pagination: {
@@ -12,13 +12,13 @@ export const defaultListData = {
     }
 }
 
-export const pListReducer = {
+const pListReducer = {
     querySuccess(state, { payload }) {
         const { list, pagination, ...rest } = payload;
         return { ...state, list, pagination: { ...state.pagination, ...pagination }, ...rest };
     },
     updateItem(state, { payload }) {
-      
+
         const { data, id } = payload;
         const filter = payload.filter ? payload.filter : function (m) { return m.id == id };
         const index = state.list.findIndex(filter);
@@ -26,7 +26,7 @@ export const pListReducer = {
             const item = { ...state.list[index], ...data };
             return { ...state, list: [...state.list.slice(0, index), item, ...state.list.slice(index + 1)] };
         }
-       
+
         return state;
     },
     deleteItem(state, { payload }) {
@@ -46,3 +46,5 @@ export const pListReducer = {
         return { ...state, ...payload };
     }
 }
+
+export default { defaultListData, pListReducer }
