@@ -23,5 +23,5 @@ import {
   SearchList,
   SearchTable,
   SearchToolBar,
-} from "antd-components";
+} from "antd-component";
 ```
