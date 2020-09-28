@@ -30,10 +30,10 @@ function babelConfig(moduleType) {
       "@babel/preset-react",
     ],
     plugins: [
-      // "@babel/plugin-proposal-object-rest-spread",
-      // ["@babel/plugin-proposal-decorators", { "legacy": true }],
+      "@babel/plugin-proposal-object-rest-spread",
+      ["@babel/plugin-proposal-decorators", { "legacy": true }],
       "@babel/plugin-proposal-class-properties",
-      // "@babel/plugin-transform-classes"
+      "@babel/plugin-transform-classes"
     ]
   };
 }
