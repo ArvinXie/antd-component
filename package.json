@@ -3,7 +3,7 @@
   "description": "对antd组件增强和扩展",
   "keywords": [],
   "license": "MIT",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
@@ -49,9 +49,6 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "antd": "^4.6.5",
-    "moment": "^2.29.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "moment": "^2.29.0"
   }
 }

@@ -11,12 +11,14 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, './dist'),
-        library: 'antd-doddle',
+        library: 'antd-component',
         libraryTarget: 'umd',
         sourceMapFilename: '[file].map', // string
     },
-
-
+    resolve: {
+      // Add '.ts' and '.tsx' as resolvable extensions.
+      extensions: ['.tsx', '.ts', '.js']
+    },
     module: {
         rules: [  {
             test: /\.jsx?$/,
@@ -49,7 +51,6 @@ module.exports = {
     ],
     externals: { // 从输出的bundle中排除依赖
         react: { commonjs: 'react', commonjs2: 'react', amd: 'react', },
-        react: { commonjs: 'react-dom', commonjs2: 'react-dom', amd: 'react-dom', },
         antd: { commonjs: 'antd', commonjs2: 'antd', amd: 'antd', },
         moment: { commonjs: 'moment', commonjs2: 'moment', amd: 'moment', },
     }
