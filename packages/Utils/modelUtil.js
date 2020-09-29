@@ -1,4 +1,4 @@
-const defaultListData = {
+export const defaultListData = {
     list: [],
     searchModel: {},
     pagination: {
@@ -12,7 +12,7 @@ const defaultListData = {
     }
 }
 
-const pListReducer = {
+export const pListReducer = {
     querySuccess(state, { payload }) {
         const { list, pagination, ...rest } = payload;
         return { ...state, list, pagination: { ...state.pagination, ...pagination }, ...rest };
@@ -47,4 +47,4 @@ const pListReducer = {
     }
 }
 
-export default { defaultListData, pListReducer }
+//export default { defaultListData, pListReducer }

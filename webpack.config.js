@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: {
         index: './packages/index',
+        utils: './packages/utils/index'
     },
     devtool: 'none',
     mode: 'production',// 告诉webpack使用production模式的内置优化,

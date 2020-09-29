@@ -3,7 +3,7 @@
   "description": "对antd组件增强和扩展",
   "keywords": [],
   "license": "MIT",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "main": "lib/index.js",
   "module": "es/index.js",
   "private": false,
@@ -24,9 +24,7 @@
     "lib"
   ],
   "sideEffects": [
-    "./packages/*/index.less",
-    "./es/*/index.less",
-    "./lib/*/index.less"
+    "./packages/**/*"
   ],
   "devDependencies": {
     "@babel/cli": "^7.11.6",
