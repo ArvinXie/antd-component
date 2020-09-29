@@ -1,7 +1,8 @@
+import React, { Component } from 'react';
 import { Tag, Input, Tooltip } from 'antd';
 import './index.less';
 
-export default class EditableTagGroup extends React.Component {
+export default class InputTag extends Component {
 
     constructor(props) {
         super(props);

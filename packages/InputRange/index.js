@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { InputNumber, DatePicker, Select } from 'antd';
 import moment from 'moment'
+
 const defValue = { gte: null, lte: null };
+
 export default class InputRange extends Component {
 
     static getDerivedStateFromProps(nextProps) {
