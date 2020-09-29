@@ -3,7 +3,7 @@
   "description": "对antd组件增强和扩展",
   "keywords": [],
   "license": "MIT",
-  "version": "0.0.21",
+  "version": "0.0.23",
   "main": "lib/index.js",
   "module": "es/index.js",
   "private": false,
