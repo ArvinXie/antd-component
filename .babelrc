@@ -14,7 +14,7 @@
         //         "libraryDirectory": "lib",
         //         "style": "less"
         //     }
-        // ]
+        // ],
         "@babel/plugin-proposal-object-rest-spread",
         [
             "@babel/plugin-proposal-decorators",
