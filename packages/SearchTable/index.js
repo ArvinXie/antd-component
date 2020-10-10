@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Table, Tabs, Pagination, Empty } from 'antd';
 import SearchToolBar from '../SearchToolBar';
-import 'antd/lib/table/style/index.css'
 import './index.less';
 const TabPane = Tabs.TabPane;
 
