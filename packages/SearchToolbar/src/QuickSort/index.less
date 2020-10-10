@@ -1,0 +1,26 @@
+.quick-sort {
+  .ant-radio-button-wrapper {
+    height: 40px;
+    line-height: 40px;
+    border: 0 none;
+    box-shadow: none;
+    &:focus,
+    &:hover,
+    &:active {
+      box-shadow: none;
+    }
+    &:not(:last-child) {
+      border-right: 1px solid #f3f3f3;
+    }
+  }
+
+  .ant-radio-button-wrapper-checked {
+    background-color: #fff;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .ant-radio-button-wrapper:not(:first-child)::before {
+    display: none;
+  }
+}

@@ -1,0 +1,45 @@
+.search-toolbar-wrap {
+  &.no-border {
+    border: 0 none;
+    background-color: #fff;
+    padding: 0;
+  }
+}
+
+.search-toolbar {
+  background: #fff;
+  display: flex;
+  align-items: center;
+
+  .filter-wrap {
+    text-align: right;
+    flex: 1 1 auto;
+    padding: 10px;
+    border-bottom: 1px solid #f2f3f5;
+
+    .ant-form-item {
+      text-align: left;
+      margin-right: 10px;
+
+      .ant-btn:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      &:last-child {
+        margin-right: 4px;
+      }
+    }
+
+    .ant-radio-button-wrapper-checked:hover {
+      color: #666;
+    }
+  }
+
+  &.search-toolbar-with-sort {
+    border-bottom: 1px solid #f2f3f5;
+
+    .filter-wrap {
+      border: 0 none;
+    }
+  }
+}

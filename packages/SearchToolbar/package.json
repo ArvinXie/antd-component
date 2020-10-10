@@ -1,0 +1,38 @@
+{
+  "name": "@antd-component/SearchToolbar",
+  "version": "0.0.1-beta",
+  "description": "@antd-component/SearchToolbar",
+  "module": "es/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "dist",
+    "es"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArvinXie/antd-components"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "> 1%",
+    "ie >= 11"
+  ],
+  "keywords": [
+    "antd"
+  ],
+  "authors": [
+    "Arvin.Xie<arvin_xie@qq.com> (https://github.com/ArvinXie)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ArvinXie/antd-components",
+  "peerDependencies": {
+    "umi": "3.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
