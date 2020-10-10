@@ -1,6 +1,7 @@
 const { spawn } = require('child_process');
 
 module.exports = function exec(command, args, opts) {
+  console.log(`exec ${command}`)
   return new Promise((resolve, reject) => {
     const child = spawn(command, args, Object.assign({ stdio: 'inherit', env: process.env }, opts));
     child.once('error', (err) => {
