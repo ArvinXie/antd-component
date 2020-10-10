@@ -107,9 +107,7 @@
     "xhr-mock": "^2.5.1",
     "yorkie": "^2.0.0"
   },
-  "gitHooks": {
-    "commit-msg": "node scripts/verifyCommit.js"
-  },
+ 
   "size-limit": [
     {
       "path": "packages/SearchToolBar/dist/**/*.js",
