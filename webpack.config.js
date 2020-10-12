@@ -128,14 +128,7 @@ tailPkgs.forEach((pkg) => {
         },
       ],
     },
-    externals: [
-      {
-        react: 'React',
-        'react-dom': 'ReactDOM',
-        antd: 'antd',
-        moment: 'moment',
-      },
-    ],
+    externals: [{ react: 'React', 'react-dom': 'ReactDOM', antd: 'antd', moment: 'moment', },],
     plugins: [
       new ProgressBarPlugin(),
       new MiniCssExtractPlugin({
