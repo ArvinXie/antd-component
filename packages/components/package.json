@@ -1,6 +1,6 @@
 {
   "name": "antd-component",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "antd-component",
   "module": "es/index.js",
   "main": "lib/index.js",
