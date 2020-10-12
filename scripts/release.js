@@ -88,7 +88,7 @@ async function release() {
         )
       : [];
     await exec(
-      'lerna',
+      'lerna', // lernaCli
       [
         'version',
         '--exact',
