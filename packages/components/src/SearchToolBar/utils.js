@@ -11,7 +11,7 @@ export function getSearchItems(values) {
         method = arr[1];
       }
       if (method == '7') {
-        value = value && value.join(',');
+        value = value && value.join(',')
       }
 
       if (key != 'sort' && value != null && value !== '') {
@@ -30,7 +30,7 @@ export function getSearchItems(values) {
       }
     }
   }
-
+ 
   return items;
 }
 
@@ -38,13 +38,14 @@ export function getSearchModel(values, sort) {
   var searchModel = {};
   var sortInfo = (sort || '').split('|');
   if (sortInfo.length == 2) {
-    var sortName = sortInfo[0];
+    var sortName = sortInfo[0]
     searchModel.sortName = sortName.slice(0, 1).toUpperCase() + sortName.slice(1);
     searchModel.sortOrder = sortInfo[1];
   }
   searchModel.items = getSearchItems(values);
   return searchModel;
 }
+
 
 export function addSearchItem(searchModel, { field, value, method = 0 } = {}) {
   return { ...searchModel, items: [...searchModel.items, { field, value, method }] };

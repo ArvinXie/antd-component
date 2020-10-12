@@ -9,11 +9,11 @@ See our website [@antd-component/SearchToolbar](https://umijs.org/plugins/Search
 Using npm:
 
 ```bash
-$ npm install --save @antd-component/SearchToolbar
+$ npm install --save antd-component
 ```
 
 or using yarn:
 
 ```bash
-$ yarn add @antd-component/SearchToolbar
+$ yarn add antd-component
 ```

@@ -5,4 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## 0.0.2 (2020-10-12)
 
-**Note:** Version bump only for package @antd-component/SearchToolbar
+**Note:** Version bump only for package antd-component

@@ -1,7 +1,7 @@
 {
-  "name": "@antd-component/SearchToolbar",
-  "version": "0.0.2",
-  "description": "@antd-component/SearchToolbar",
+  "name": "antd-component",
+  "version": "0.0.29",
+  "description": "antd-component",
   "module": "es/index.js",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
