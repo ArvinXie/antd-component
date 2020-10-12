@@ -1,2 +1,2 @@
-import  * as utils from './modelUtil';
-export default utils;
+import { pListReducer, defaultListData } from './modelUtil';
+export default { pListReducer, defaultListData };
